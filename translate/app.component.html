@@ -1,0 +1,32 @@
+<nav class="navbar standard-nav navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="container">
+      <div class="row no-gutter">
+        <div class="navbar-header">
+          <a class="navbar-brand" [routerLink]="['index']"><img src="https://www.stackpath.com/images/sp-logo-light.svg"></a> 
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav nav-right">
+            <li *ngIf="isAdmin"><a [routerLink]="['projects']">Projects</a></li>
+            <li><a href="https://support.stackpath.com">Support</a></li>
+            <li><a href="https://app.stackpath.com/">Log In</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <h4>Translate: Hello World</h4>
+  <div class="btn-group">   
+    <button (click)="selectLang()">改变语言</button>
+  </div>
+  <div style="margin-top: 20px">
+    <p>
+      Translate With Pipe: <strong>{{ 'hello world' | translate }}</strong>
+    </p>
+    <p>
+      Translate with Service: <strong>{{ translatedText }}</strong>
+    </p>
+  </div>
+</div>
